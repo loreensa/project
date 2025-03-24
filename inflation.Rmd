@@ -67,9 +67,10 @@ summary(inflation)
 with(mtcars, plot(hp, mpg))
 ```
 
-```{python}
-print("Hello world")
+```{r}
+repro::automate()
 ```
+
 
 
 
