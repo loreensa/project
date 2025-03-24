@@ -8,6 +8,7 @@ repro:
     - here
     - tidyverse
     - lubridate
+    - ggplot2
     - aaronpeikert/repro@fc7e884
   scripts:
     - R/prepare_inflation.R
@@ -50,6 +51,10 @@ inflation %>%
   ungroup() %>% 
   ggplot() +
   geom_line(aes(date, value, color = name)) +
+  theme_minimal() +
+  ylab("subjective inflation in %-points") +
+  labs(color = "") +
+  theme(legend.position = c(.1, .9)) +
   NULL
 ```
 
@@ -66,16 +71,6 @@ with(mtcars, plot(hp, mpg))
 print("Hello world")
 ```
 
-```{r}
-# use a function without loading the package:
-# package::function
-usethis::use_git_config(
-  user.name = "loreensa", # <-- change to your name
-  user.email = "loreen.sabel@tu-dortmund.de", # <-- and your email
-  init.defaultBranch = "main") # <-- not necessary but kinder than 'master'
-```
 
-```{r}
-usethis::use_git()
-```
+
 
