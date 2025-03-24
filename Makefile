@@ -2,7 +2,7 @@ PROJECT := reproworkshop
 WORKDIR := $(CURDIR)
 
 # list below your targets and their recipies
-all: inflation.pdf
+all: inflation.html
 
 data/raw/inflation.rds: R/download_inflation.R
 	Rscript -e "source('$<')"
@@ -10,5 +10,6 @@ data/raw/inflation.rds: R/download_inflation.R
 ### Rmd's ###
 include .repro/Makefile_Rmds
 
-publish/: inflation.pdf
+publish/: inflation.html
 include .repro/Makefile_publish
+
